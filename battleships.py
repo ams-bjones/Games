@@ -24,14 +24,14 @@ ship_col = random_col(board)
 # Everything from here on should go in your for loop!
 # Be sure to indent four spaces!
 for turn in range(4):
-    guess_row = int(raw_input("Guess Row:")) - 1
-    guess_col = int(raw_input("Guess Col:")) - 1
+    guess_row = int(input("Guess Row:")) - 1
+    guess_col = int(input("Guess Col:")) - 1
 
-    if guess_row == ship_row and guess_col == ship_col:
+    if ((guess_row == ship_row) and (guess_col == ship_col)):
         print "\nCongratulations! You sunk my battleship!"
         break
     else:
-        if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+        if ((guess_row < 0) or (guess_row > 4)) or ((guess_col < 0) or (guess_col > 4)):
             print "\nOops, that's not even in the ocean."
         elif(board[guess_row][guess_col] == "X"):
             print "\nYou guessed that one already."
